@@ -14,6 +14,14 @@ _private.loadNconf = function loadNconf(options) {
         customConfigPath = options.customConfigPath || process.cwd(),
         nconf = new Nconf.Provider();
 
+	// Set configuration directories if ENV variables are present
+	if (process.env.BASE_CONFIG_DIRECTORY) {
+		baseConfigPath = process.env.BASE_CONFIG_DIRECTORY;
+	}
+	if (process.env.CUSTOM_CONFIG_DIRECTORY) {
+		customConfigPath = process.env.CUSTOM_CONFIG_DIRECTORY;
+	}
+
     /**
      * no channel can override the overrides
      */
