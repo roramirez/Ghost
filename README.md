@@ -39,7 +39,7 @@ gulp dev
 
 To run tests
 ```bash
-ember test
+npm test
 ```
 
 
